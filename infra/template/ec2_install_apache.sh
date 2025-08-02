@@ -9,7 +9,7 @@ git clone https://github.com/svishal16/python-mysql-db-proj-1.git
 sleep 20
 # shellcheck disable=SC2164
 cd python-mysql-db-proj-1
-pip3 install -r requirements.txt
+pip3 install -r requirements.txt --break-system-packages
 echo 'Waiting for 30 seconds before running the app.py'
 
 export DB_HOST="${rds_endpoint}"
