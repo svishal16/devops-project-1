@@ -1,13 +1,13 @@
 variable "domain_name" {}
 variable "hosted_zone_id" {}
 
-# output "dev_proj_1_acm_arn" {
-#   value = aws_acm_certificate.dev_proj_1_acm_arn.arn
-# }
-
 output "dev_proj_1_acm_arn" {
-  value = aws_acm_certificate_validation.dev_proj_1_acm_validation.certificate_arn
+  value = aws_acm_certificate.dev_proj_1_acm_arn.arn
 }
+
+# output "dev_proj_1_acm_arn" {
+#   value = aws_acm_certificate_validation.dev_proj_1_acm_validation.certificate_arn
+# }
 
 
 resource "aws_acm_certificate" "dev_proj_1_acm_arn" {
