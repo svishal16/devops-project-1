@@ -38,7 +38,7 @@ resource "aws_security_group" "ec2_sg_ssh_http" {
     protocol    = "tcp"
   }
 
-  # enable http
+  # enable https
   ingress {
     description = "Allow HTTPS request from anywhere"
     cidr_blocks = ["0.0.0.0/0"]
@@ -46,6 +46,16 @@ resource "aws_security_group" "ec2_sg_ssh_http" {
     to_port     = 443
     protocol    = "tcp"
   }
+
+  # enable port 5000 for load balancer
+  ingress {
+    description = "Allow traffic on port 5000 for load balancer"
+    cidr_blocks = ["0.0.0.0/0"]
+    from_port   = 5000
+    to_port     = 5000
+    protocol    = "tcp"
+  }
+
 
   #Outgoing request
   egress {
